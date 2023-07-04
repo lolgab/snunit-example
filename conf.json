@@ -1,0 +1,13 @@
+{
+  "applications": {
+    "app": {
+      "type": "external",
+      "executable": "out"
+    }
+  },
+  "listeners": {
+    "*:8080": {
+      "pass": "applications/app"
+    }
+  }
+}
