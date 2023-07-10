@@ -23,7 +23,7 @@ RUN ./mill --no-server --help
 
 COPY . .
 
-RUN ./mill --no-server nativeLink
+RUN SCALANATIVE_MODE=release-fast SCALANATIVE_LTO=thin ./mill --no-server nativeLink
 
 FROM base
 

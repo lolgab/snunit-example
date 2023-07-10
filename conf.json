@@ -2,7 +2,11 @@
   "applications": {
     "app": {
       "type": "external",
-      "executable": "out"
+      "executable": "out",
+      "processes": {
+        "spare": 2,
+        "max": 8
+      }
     }
   },
   "listeners": {
