@@ -16,6 +16,14 @@ Then you can run:
 
 to run it.
 
+If you want to build your application on every change you can run a separate terminal with the following command:
+
+```
+./mill -w nativeLink
+```
+
+And to restart the app you need to kill the first process and run `./mill runUnit` again in your first terminal.
+
 ### Docker image
 
 To build a Docker image you can run:
