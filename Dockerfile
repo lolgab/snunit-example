@@ -46,7 +46,7 @@ COPY --from=dev /workdir/passwd /etc/passwd
 COPY --from=dev /workdir/group /etc/group
 COPY --from=dev /workdir/empty_dir /usr/local/var/run
 
-# scala native dependencies
+# scala native and unitd dependencies
 
 ## x86_64 specific files
 COPY --from=dev */lib/x86_64-linux-gnu/libm.so.6 /lib/x86_64-linux-gnu/libm.so.6
@@ -55,7 +55,7 @@ COPY --from=dev */lib/x86_64-linux-gnu/libstdc++.so.6 /lib/x86_64-linux-gnu/libs
 COPY --from=dev */lib/x86_64-linux-gnu/libgcc_s.so.1 /lib/x86_64-linux-gnu/libgcc_s.so.1
 COPY --from=dev */lib64/ld-linux-x86-64.so.2 /lib64/ld-linux-x86-64.so.2
 
-## aarch64 speicific files
+## aarch64 specific files
 COPY --from=dev */lib/aarch64-linux-gnu/libm.so.6 /lib/aarch64-linux-gnu/libm.so.6
 COPY --from=dev */lib/aarch64-linux-gnu/libc.so.6 /lib/aarch64-linux-gnu/libc.so.6
 COPY --from=dev */lib/aarch64-linux-gnu/libstdc++.so.6 /lib/aarch64-linux-gnu/libstdc++.so.6
