@@ -25,7 +25,7 @@ RUN ./mill --no-server --help
 
 COPY . .
 
-RUN ./mill --no-server nativeLink
+RUN SCALANATIVE_MODE=release-size SCALANATIVE_LTO=thin ./mill --no-server nativeLink
 
 RUN mkdir empty_dir
 RUN groupadd --gid 999 unit && \

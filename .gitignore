@@ -1,2 +1,4 @@
 /out
 /.bsp
+/stderr.log
+/stdout.log
