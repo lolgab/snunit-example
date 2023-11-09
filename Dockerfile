@@ -2,7 +2,7 @@ FROM ubuntu:22.04 as dev
 
 WORKDIR /workdir
 
-ENV UNIT_VERSION=1.31.0
+ENV UNIT_VERSION=1.31.1
 
 # Install Scala Native requirements
 RUN apt-get update && apt-get install -y openjdk-11-jdk clang
@@ -19,9 +19,10 @@ RUN cd unit && \
     install -p build/lib/libunit.a /usr/local/lib/libunit.a
 
 COPY mill mill
+COPY .mill-version .mill-version
 
 # pre-download Mill
-RUN ./mill --no-server --help
+RUN ./mill --no-server version
 
 COPY . .
 
