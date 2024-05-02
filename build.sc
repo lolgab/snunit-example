@@ -5,25 +5,16 @@ import mill.scalanativelib._
 import mill.util.Jvm
 
 trait Base extends ScalaModule {
-  def scalaVersion = "3.3.1"
+  def scalaVersion = "3.4.0"
 }
 
 object root extends RootModule with Base with ScalaNativeModule {
-  def scalaNativeVersion = "0.4.15"
+  def scalaNativeVersion = "0.4.17"
 
-  val http4sVersion = "0.23.23-63-4d9afaa-SNAPSHOT"
-
-  def repositoriesTask = T.task {
-    super.repositoriesTask() ++ Seq(
-      MavenRepository(
-        "https://s01.oss.sonatype.org/content/repositories/snapshots"
-      )
-    )
-  }
+  val http4sVersion = "0.23.26"
 
   def ivyDeps = super.ivyDeps() ++ Agg(
-    ivy"com.github.lolgab::snunit-http4s0.23::0.7.1",
-    ivy"org.typelevel::cats-core::2.11-85633a2-20230918T165946Z-SNAPSHOT",
+    ivy"com.github.lolgab::snunit-http4s0.23::0.9.0",
     ivy"org.http4s::http4s-core::$http4sVersion",
     ivy"org.http4s::http4s-dsl::$http4sVersion"
   )
